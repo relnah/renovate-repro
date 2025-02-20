@@ -6,12 +6,12 @@ Then replace the current `h1` with the Renovate Issue/Discussion number.
 
 ## Current behavior
 
-Explain the current behavior here.
+releaseTimestamp is not set to date of gradle plugin actual release
 
 ## Expected behavior
 
-Explain the expected behavior here.
+releaseTimestamp should be set to date of actual release. Present in metadata-pom
 
 ## Link to the Renovate issue or Discussion
 
-Put your link to the Renovate issue or Discussion here.
+https://github.com/renovatebot/renovate/discussions/34349
