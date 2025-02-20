@@ -1,1 +1,49 @@
-{}
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:best-practices", "config:js-app"],
+    "ignorePresets": ["docker:pinDigests"],
+    "minimumReleaseAge": "10 days",
+    "minor": {
+      "minimumReleaseAge": "2 days"
+    },
+    "prConcurrentLimit": 5,
+    "prCreation": "not-pending",    
+    "packageRules": [
+      {
+        "groupName": "spring-plugins",
+        "separateMinorPatch": true,
+        "separateMajorMinor": true,
+        "matchPackageNames": [
+          "/org.springframework.boot/",
+          "/io.spring.dependency-management/"
+        ]
+      },
+      {
+        "description": "Restrict docker image updates for Java to stay on the same major version. This normally requires code changes or similar, so will be handled manually",
+        "matchManagers": [
+          "dockerfile"
+        ],
+        "matchPackageNames": [
+          "eclipse-temurin",
+          "amazoncorretto",
+          "adoptopenjdk",
+          "openjdk",
+          "java",
+          "java-jre",
+          "sapmachine"
+        ],
+        "matchPackagePatterns": [
+          "^azul/zulu-openjdk",
+          "^bellsoft/liberica-openj(dk|re)-"
+        ],
+        "major": {
+          "enabled": false
+        }
+      },
+      {
+        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true,
+        "automergeType": "branch"
+      }
+    ]
+  }
