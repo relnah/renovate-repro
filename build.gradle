@@ -43,7 +43,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
 	implementation 'io.getunleash:springboot-unleash-starter:1.1.1'
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
 
 	compileOnly 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'
